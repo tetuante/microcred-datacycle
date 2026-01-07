@@ -1,0 +1,5 @@
+<div class="col-lg-{{ .Get "ancho" | default "6" }} col-md-12 text-center my-auto">
+    <a href="{{ .Get "url" }}" target="_blank" rel="noopener">
+        <img src="{{ .Get "src" }}" alt="{{ .Get "alt" }}" class="img-fluid" style="max-height: {{ .Get "altura" | default "80px" }}; margin: 15px;">
+    </a>
+</div>

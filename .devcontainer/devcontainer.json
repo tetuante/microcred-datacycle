@@ -1,0 +1,14 @@
+{
+  "name": "Docsy Modern Dev",
+  "image": "floryn90/hugo:ext-alpine", 
+  "appPort": [1313],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "budparr.hugo-themer",
+        "rossinek.hugo-helper"
+      ]
+    }
+  },
+  "postCreateCommand": "apk add --no-cache git nodejs npm && npm install -g postcss-cli autoprefixer"
+}

@@ -1,0 +1,26 @@
+<div class="col-md-4 mb-4">
+    <div class="h-100 p-4 rounded shadow-sm bg-white {{ if .Get "destacado" }}border border-warning{{ else }}border{{ end }} d-flex flex-column align-items-center">
+        <i class="{{ .Get "icono" | default "fa-solid fa-info-circle" }} fa-3x {{ if .Get "destacado" }}text-warning{{ else }}text-primary{{ end }} mb-3"></i>
+        
+        <h5 class="font-weight-bold text-dark">{{ .Get "titulo" }}</h5>
+        <hr style="width: 30px; border: 2px solid {{ if .Get "destacado" }}#ffc107{{ else }}#007bff{{ end }}; margin: 10px auto;">
+        
+        <div class="card-content mt-2 w-100 text-center">
+            {{ if .Get "precio_general" }}
+                <p class="mb-1 text-muted small">Precio general:</p>
+                <h4 class="font-weight-bold text-dark mb-3">{{ .Get "precio_general" }}</h4>
+                
+                <div class="p-2 bg-warning rounded mb-3" style="--bs-bg-opacity: .1;">
+                    <p class="text-dark font-weight-bold mb-0" style="font-size: 0.85rem;">
+                        <i class="fa-solid fa-star me-1 text-warning"></i> {{ .Get "beca_titulo" }}
+                    </p>
+                    <h3 class="text-success font-weight-bold mb-0">{{ .Get "precio_beca" }}</h3>
+                </div>
+            {{ end }}
+
+            <div class="info-card-text {{ if .Get "destacado" }}text-danger font-italic small{{ else }}text-secondary{{ end }}">
+                {{ .Inner | markdownify }}
+            </div>
+        </div>
+    </div>
+</div>

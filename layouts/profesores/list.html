@@ -1,0 +1,54 @@
+{{ define "main" }}
+<div class="container-fluid bg-light"> <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center mt-5 pt-5 mb-5">
+                <h1 class="display-4 font-weight-bold text-dark">{{ .Title }}</h1>
+                {{ with .Params.description }}
+                    <p class="lead text-muted mx-auto" style="max-width: 800px;">{{ . | markdownify }}</p>
+                {{ end }}
+                <hr class="mt-4" style="width: 50px; border: 2px solid #007bff; border-radius: 2px;">
+            </div>
+        </div>
+
+        {{ .Content }}
+
+        <div class="row justify-content-center pb-5">
+            {{ range .Pages }}
+            <div class="col-lg-4 col-md-6 mb-5">
+                <div class="card h-100 shadow-sm border bg-white" style="border-radius: 15px;">
+                    
+                    <div class="text-center pt-4">
+                        {{ $image := .Resources.GetMatch "featured*" }}
+                        {{ with $image }}
+                            {{ $scaled := .Fill "300x300 center" }}
+                            <img src="{{ $scaled.RelPermalink }}" 
+                                 class="rounded-circle shadow-sm" 
+                                 style="width: 140px; height: 140px; object-fit: cover; border: 5px solid #f8f9fa;" 
+                                 alt="{{ $.Title }}">
+                        {{ else }}
+                            <div class="rounded-circle bg-light d-inline-flex align-items-center justify-content-center shadow-sm" 
+                                 style="width: 140px; height: 140px; border: 5px solid white;">
+                                <i class="fas fa-user-tie fa-4x text-secondary"></i>
+                            </div>
+                        {{ end }}
+                    </div>
+                    
+                    <div class="card-body text-center px-4">
+                        <h4 class="card-title text-dark font-weight-bold mb-3">{{ .Title }}</h4>
+                        <p class="card-text text-muted" style="font-size: 0.95rem; line-height: 1.6;">
+                            {{ .Params.bio | default .Summary }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+
+<style>
+  .td-sidebar, .td-toc { display: none !important; }
+  .td-main { max-width: 100% !important; flex: 0 0 100% !important; padding: 0 !important; }
+  .td-content { margin: 0 !important; max-width: 100% !important; }
+</style>
+{{ end }}
