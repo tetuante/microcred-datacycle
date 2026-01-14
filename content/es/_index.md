@@ -106,8 +106,8 @@ Sesiones presenciales:
 {{< blocks/section color="white" >}}
 <div class="container text-center py-2  ">
     <div class="row justify-content-center align-items-center g-0">
-        {{< partners src="/images/logo-ucm.jpg" alt="Logo Universidad Complutense de Madrid" url="https://www.ucm.es/" altura="100px" ancho="4" >}}
-        {{< partners src="/images/logo-nfq.svg" alt="Logo Nfq" url="https://nfq.es/" altura="60px" ancho="4" >}}
+        {{< partners src="images/logo-ucm.jpg" alt="Logo Universidad Complutense de Madrid" url="https://www.ucm.es/" altura="100px" ancho="4" >}}
+        {{< partners src="images/logo-nfq.svg" alt="Logo Nfq" url="https://nfq.es/" altura="60px" ancho="4" >}}
     </div>
 </div>
 {{< /blocks/section >}}

@@ -1,5 +1,7 @@
-baseURL: https://example.docsy.dev
-title: Goldydocs
+baseURL: https://www.fdi.ucm.es/microcredenciales/datacycle/
+title: Gestión del Ciclo de Vida del Dato
+#canonifyURLs: true
+#relativeURLs: true
 
 # cSpell:ignore goldmark github hugo readingtime docsy subdir lastmod pygments linenos catmullrom norsk gu
 
